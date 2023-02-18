@@ -1,0 +1,83 @@
+.navBarContainer {
+    width: 100%;
+    padding: 0 10%;
+    height: 6vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: linear-gradient(to right, hsl(220, 50%, 30%), hsl(180, 40%, 50%));
+    box-shadow: 0 2px 5px black;
+    user-select: none;
+}
+
+a {
+    width: calc(100px + 5vmin);
+    height: 100%;
+    text-decoration: none;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    padding: 0 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 2px 2px hsla(0, 0%, 0%, 1);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.logo:hover {
+    color: hsl(0, 0%, 100%);
+}
+.navBarMenuList {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+}
+.navBarMenuListItem,
+.navBarMenuListBtn {
+    width: calc(100px + 5vmin);
+    height: 100%;
+    padding: 0 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: center;
+    text-transform: capitalize;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    color: white;
+    text-shadow: 0 2px 2px hsla(0, 0%, 0%, 1);
+    cursor: pointer;
+    transition: 0.1s ease;
+    border-left: 1px solid hsla(0, 0%, 100%, 0.4);
+}
+
+.navBarMenuListBtn {
+    border-right: 1px solid hsla(0, 0%, 100%, 0.4);
+}
+
+.logo:hover,
+.navBarMenuListItem:hover,
+.navBarMenuListBtn:hover {
+    animation: pulse 0.5s ease infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        background: hsla(180, 40%, 50%, 0.2);
+    }
+    100% {
+        background: hsla(180, 40%, 50%, 1);
+    }
+}

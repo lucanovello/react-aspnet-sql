@@ -1,0 +1,128 @@
+.activityListContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: left;
+    text-transform: capitalize;
+    list-style: none;
+    background: white;
+    /* box-shadow: 0 0 5px hsl(0, 0%, 80%); */
+    line-height: 1.25;
+    border: 1px solid hsl(0, 0%, 90%);
+    border-radius: 10px;
+}
+.activityListItemContainer {
+    width: 97%;
+    padding: 3vh 2%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px dashed hsla(211, 15%, 75%, 0.5);
+}
+
+.activityListItemImageWrapper {
+    aspect-ratio: 2;
+    height: 150px;
+    margin-right: 2.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.activityListItemImage {
+    height: 100%;
+    object-fit: cover;
+}
+
+.activityListItemDetailsWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.activityListItemTitle {
+    font-family: 'Poppins';
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-align: left;
+    text-transform: uppercase;
+}
+.activityListItemDate {
+    margin-bottom: 1vh;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+.activityListItemDesc {
+    margin-bottom: 1vh;
+    font-weight: 600;
+}
+.activityListItemCategoryWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.activityListItemCategory {
+    padding: 0.2vh 5%;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 5px;
+    color: #333333;
+    background: hsl(0, 0%, 96%);
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.activityListItemBtnWrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.activityListItemBtnView,
+.activityListItemBtnDelete {
+    width: 100px;
+    margin-left: 5px;
+    padding: 0.5vh 0;
+    font-family: 'Poppins';
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+.activityListItemBtnView {
+    background: hsl(210, 80%, 30%);
+}
+.activityListItemBtnView:hover {
+    background: hsl(210, 80%, 45%);
+    outline: 1px solid hsl(210, 80%, 45%);
+}
+.activityListItemBtnView:active {
+    transition: 0s ease-out;
+    background: hsl(210, 80%, 60%);
+    outline: 1px solid hsl(210, 80%, 45%);
+}
+
+.activityListItemBtnDelete {
+    background: hsl(0, 70%, 40%);
+}
+.activityListItemBtnDelete:hover {
+    background: hsl(0, 100%, 50%);
+    outline: 1px solid hsl(0, 70%, 50%);
+}
+.activityListItemBtnDelete:active {
+    transition: 0s ease-out;
+    background: hsl(0, 100%, 60%);
+    outline: 1px solid hsl(0, 70%, 50%);
+}

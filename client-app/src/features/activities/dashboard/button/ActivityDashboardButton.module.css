@@ -1,0 +1,42 @@
+.activityDashboardBtnContainer {
+    width: 100%;
+    margin-top: 2vh;
+    padding-top: 2vh;
+    border-top: 1px dashed hsla(211, 15%, 75%, 0.5);
+    display: flex;
+}
+.activityDashboardBtnCancel,
+.activityDashboardBtnSubmit {
+    width: 100%;
+    padding: 1.5vh 5%;
+    border-width: 1px;
+    border-style: solid;
+    font-family: 'Roboto';
+    font-size: calc(10px + 0.5vmin);
+    font-weight: 500;
+    background: hsl(0, 0%, 100%);
+    transition: 0.15s ease;
+    cursor: pointer;
+}
+
+.activityDashboardBtnCancel {
+    color: hsl(0, 0%, 20%);
+    border-color: hsl(0, 0%, 20%);
+    border-radius: 7px 0 0 7px;
+    border-left-width: 1px;
+}
+.activityDashboardBtnCancel:hover {
+    color: hsl(0, 0%, 100%);
+    background: hsl(210, 0%, 20%);
+}
+
+.activityDashboardBtnSubmit {
+    color: hsl(110, 80%, 30%);
+    border-color: hsl(110, 80%, 30%);
+    border-radius: 0 7px 7px 0;
+    border-right-width: 1px;
+}
+.activityDashboardBtnSubmit:hover {
+    color: white !important;
+    background: hsl(110, 80%, 30%);
+}

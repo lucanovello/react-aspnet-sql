@@ -1,0 +1,55 @@
+.activityDetailsContainer {
+    width: 100%;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.25;
+    text-transform: capitalize;
+    list-style: none;
+    background: white;
+    /* box-shadow: 0 0 8px rgb(174, 174, 174); */
+    border: 1px solid hsl(0, 0%, 90%);
+    border-radius: 10px;
+}
+.activityDetailsImageWrapper {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+}
+.activityDetailsImage {
+    width: 100%;
+    object-fit: cover;
+}
+
+.activityDetailsTextWrapper {
+    width: 100%;
+    padding: 2vh;
+}
+.activityDetailsTitle {
+    font-family: 'Poppins';
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+}
+.activityDetailsDate {
+    margin-bottom: 1vh;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+.activityDetailsDescWrapper {
+    margin-bottom: 1vh;
+}
+.activityDetailsDesc {
+    font-size: 0.9rem;
+    font-weight: 600;
+}

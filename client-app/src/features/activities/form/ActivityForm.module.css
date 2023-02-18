@@ -1,0 +1,106 @@
+.activityFormContainer {
+    width: 100%;
+    height: min-content;
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Roboto';
+    font-size: 13px;
+    font-weight: 400;
+    text-align: left;
+    text-transform: capitalize;
+    background: white;
+    border: 1px solid hsl(0, 0%, 90%);
+    border-radius: 10px;
+}
+
+.activityFormList {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 1.25vh;
+    position: relative;
+}
+.activityFormListInput,
+.activityFormListTextarea {
+    width: 100%;
+    position: relative;
+}
+
+.activityFormInputLabelDown,
+.activityFormInputLabelTextareaDown {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 1em;
+    left: 10px;
+    font-family: 'Roboto Condensed';
+    font-weight: 300;
+    color: #cccccc;
+    background: transparent;
+    transition: 0.4s ease;
+}
+
+.activityFormListInput:focus-within .activityFormInputLabelDown,
+.activityFormListTextarea:focus-within .activityFormInputLabelTextareaDown,
+.activityFormInputLabelUp,
+.activityFormInputLabelTextareaUp {
+    padding: 0 2px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: -0.5em;
+    left: 5px;
+    font-family: 'Roboto Condensed';
+    font-weight: 300;
+    color: #808080;
+    background: white;
+    border-radius: 3px;
+    transition: 0.2s ease;
+}
+
+.activityFormListInput:focus-within .activityFormInputLabelDown,
+.activityFormListTextarea:focus-within .activityFormInputLabelTextareaDown {
+    color: black;
+    font-weight: 400;
+}
+
+.activityFormInput:focus-within ~ .activityFormInputLabelUp,
+.activityFormTextarea:focus-within ~ .activityFormInputLabelUp {
+    color: black;
+    font-weight: 400;
+}
+
+.activityFormInput,
+.activityFormTextarea {
+    width: 100%;
+    padding: 1em 10px;
+    font-family: 'Roboto';
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: black;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 5px;
+}
+.activityFormInput::placeholder,
+.activityFormTextarea::placeholder {
+    font-weight: 300;
+    color: transparent;
+}
+
+.activityFormInputName::placeholder {
+    font-weight: 400;
+}
+
+.activityFormTextarea {
+    height: 8vh;
+    resize: vertical;
+}
