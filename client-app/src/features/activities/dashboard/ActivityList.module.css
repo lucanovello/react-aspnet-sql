@@ -48,12 +48,40 @@
 }
 
 .activityListItemTitle {
+    width: max-content;
     font-family: 'Poppins';
     font-size: 1.3rem;
     font-weight: 900;
     text-align: left;
     text-transform: uppercase;
+    color: #242424;
+    text-decoration: none;
+    transition: 0.2s ease 0.1s;
 }
+.activityListItemTitle:hover {
+    color: #555555;
+}
+
+.activityListItemTitle::after {
+    content: '';
+    width: 0%;
+    height: 1px;
+    margin: -2px 0 2px 1px;
+    display: block;
+    background: #242424;
+    transition: 0.2s ease;
+}
+
+.activityListItemTitle:hover::after {
+    content: '';
+    width: calc(100% - 1px);
+    height: 1px;
+    margin: -2px 0 2px 1px;
+    display: block;
+    background: #242424;
+    transition: 0.4s ease 0.1s;
+}
+
 .activityListItemDate {
     margin-bottom: 1vh;
     font-size: 0.9rem;
@@ -91,6 +119,9 @@
     width: 100px;
     margin-left: 5px;
     padding: 0.5vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Poppins';
     font-size: 0.9rem;
     font-weight: 400;

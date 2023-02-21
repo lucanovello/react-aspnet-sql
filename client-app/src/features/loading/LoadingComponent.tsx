@@ -21,7 +21,9 @@ export default function LoadingComponent({ text }: Props) {
                 <div></div>
                 <div></div>
             </div>
-            {text && <div className={loadingComponentStyle.loadingComponentText}>{text}</div>}
+            <div className={loadingComponentStyle.loadingComponentText}>
+                {text ? text : 'Loading...'}
+            </div>
         </div>
     );
 }

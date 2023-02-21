@@ -5,6 +5,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    position: sticky;
+    top: 0;
     background: linear-gradient(to right, hsl(220, 50%, 30%), hsl(180, 40%, 50%));
     box-shadow: 0 2px 5px black;
     user-select: none;

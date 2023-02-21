@@ -1,15 +1,25 @@
-import { Activity } from '../../../app/models/activity';
+import { observer } from 'mobx-react-lite';
+import { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { useStore } from '../../../app/stores/store';
-import ActivityDashboardButton from '../dashboard/button/ActivityDashboardButton';
+import LoadingComponent from '../../loading/LoadingComponent';
 import activityDetailsStyle from './ActivityDetails.module.css';
 
 interface Props {
-    activity: Activity;
+    hideBtns?: boolean;
 }
 
-export default function ActivityDetails({ activity }: Props) {
+export default observer(function ActivityDetails({ hideBtns }: Props) {
     const { activityStore } = useStore();
-    const { openForm, cancelSelectedActivity } = activityStore;
+    const { selectedActivity: activity, loadActivity } = activityStore;
+    const { id } = useParams();
+
+    useEffect(() => {
+        if (id) loadActivity(id);
+        console.log(hideBtns);
+    }, [id, loadActivity, hideBtns]);
+
+    if (!activity) return <LoadingComponent />;
 
     return (
         <div className={activityDetailsStyle.activityDetailsContainer}>
@@ -30,16 +40,27 @@ export default function ActivityDetails({ activity }: Props) {
                     <p className={activityDetailsStyle.activityDetailsDesc}>
                         {activity.city}, {activity.venue}
                     </p>
-                    <ActivityDashboardButton
-                        selectedActivity={activity}
-                        btnSubmitText="Edit"
-                        btnCancelText="Close"
-                        btnColor="hsl(210, 70%, 55%)"
-                        handleSubmit={openForm}
-                        handleCancel={cancelSelectedActivity}
-                    />
+                    {!hideBtns && (
+                        <div className={activityDetailsStyle.activityDetailsBtnContainer}>
+                            <div className={activityDetailsStyle.activityDetailsBtnWrapper}>
+                                <Link
+                                    to={'/activities'}
+                                    className={activityDetailsStyle.activityDetailsBtnCancel}
+                                >
+                                    {'Back'}
+                                </Link>
+                                <Link
+                                    to={`/manage/${activity.id}`}
+                                    type="submit"
+                                    className={activityDetailsStyle.activityDetailsBtnSubmit}
+                                >
+                                    {'Edit'}
+                                </Link>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
     );
-}
+});

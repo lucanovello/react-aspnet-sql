@@ -1,0 +1,13 @@
+.homePageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Poppins';
+    font-weight: 900;
+    font-size: 2rem;
+    text-transform: uppercase;
+}

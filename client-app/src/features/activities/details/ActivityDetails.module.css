@@ -1,6 +1,6 @@
 .activityDetailsContainer {
     width: 100%;
-    height: min-content;
+    padding: calc(10px + 2%);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -13,9 +13,9 @@
     text-transform: capitalize;
     list-style: none;
     background: white;
-    /* box-shadow: 0 0 8px rgb(174, 174, 174); */
     border: 1px solid hsl(0, 0%, 90%);
     border-radius: 10px;
+    row-gap: 2vh;
 }
 .activityDetailsImageWrapper {
     width: 100%;
@@ -23,16 +23,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
 }
 .activityDetailsImage {
     width: 100%;
-    object-fit: cover;
+    border-radius: 6px;
 }
 
 .activityDetailsTextWrapper {
     width: 100%;
-    padding: 2vh;
 }
 .activityDetailsTitle {
     font-family: 'Poppins';
@@ -41,6 +40,7 @@
     text-align: left;
     text-transform: uppercase;
 }
+
 .activityDetailsDate {
     margin-bottom: 1vh;
     font-size: 0.9rem;
@@ -48,8 +48,66 @@
 }
 .activityDetailsDescWrapper {
     margin-bottom: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 .activityDetailsDesc {
     font-size: 0.9rem;
     font-weight: 600;
+}
+
+.activityDetailsBtnContainer {
+    width: 100%;
+    margin-top: 2vh;
+    padding-top: 2vh;
+    border-top: 1px dashed hsla(211, 15%, 75%, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.activityDetailsBtnWrapper {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.activityDetailsBtnCancel,
+.activityDetailsBtnSubmit {
+    width: 100%;
+    padding: 1.5vh 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 1px;
+    border-style: solid;
+    font-family: 'Roboto';
+    font-size: calc(10px + 0.5vmin);
+    font-weight: 500;
+    background: hsl(0, 0%, 100%);
+    transition: 0.15s ease;
+    cursor: pointer;
+}
+
+.activityDetailsBtnCancel {
+    color: hsl(0, 0%, 20%);
+    border-color: hsl(0, 0%, 20%);
+    border-left-width: 1px;
+}
+.activityDetailsBtnCancel:hover {
+    color: hsl(0, 0%, 100%);
+    background: hsl(210, 0%, 20%);
+}
+
+.activityDetailsBtnSubmit {
+    color: hsl(210, 70%, 55%);
+    border-color: hsl(210, 70%, 55%);
+    border-right-width: 1px;
+}
+.activityDetailsBtnSubmit:hover {
+    color: white;
+    background: hsl(210, 70%, 55%);
 }

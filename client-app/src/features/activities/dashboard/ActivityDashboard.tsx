@@ -1,12 +1,24 @@
 import { observer } from 'mobx-react-lite';
+import { useEffect } from 'react';
 import { useStore } from '../../../app/stores/store';
-import ActivityDetails from '../details/ActivityDetails';
-import ActivityForm from '../form/ActivityForm';
+import LoadingComponent from '../../loading/LoadingComponent';
 import activityDashboardStyle from './ActivityDashboard.module.css';
 import ActivityList from './ActivityList';
 
 export default observer(function ActivityDashboard() {
     const { activityStore } = useStore();
+    const { loadActivities, activityRegistry, loadingInitial } = activityStore;
+
+    useEffect(() => {
+        if (activityRegistry.size === 0) loadActivities();
+    }, [loadActivities, activityRegistry.size]);
+
+    if (loadingInitial)
+        return (
+            <>
+                <LoadingComponent text="Loading..." />
+            </>
+        );
 
     return (
         <main className={activityDashboardStyle.activityDashboardContainer}>
@@ -15,10 +27,7 @@ export default observer(function ActivityDashboard() {
             </div>
 
             <div className={activityDashboardStyle.activityDashboardRight}>
-                {activityStore.selectedActivity && (
-                    <ActivityDetails activity={activityStore.selectedActivity} />
-                )}
-                {activityStore.editMode && <ActivityForm />}
+                <h4>{'Activity Filters >'}</h4>
             </div>
         </main>
     );

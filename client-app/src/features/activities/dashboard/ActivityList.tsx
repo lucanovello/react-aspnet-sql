@@ -1,11 +1,11 @@
 import { observer } from 'mobx-react-lite';
+import { Link } from 'react-router-dom';
 import { useStore } from '../../../app/stores/store';
 import activityListStyle from './ActivityList.module.css';
 
 export default observer(function ActivityList() {
     const { activityStore } = useStore();
-    const { activitiesByDate, selectedActivity, selectActivity, closeForm, deleteActivity } =
-        activityStore;
+    const { activitiesByDate, deleteActivity } = activityStore;
 
     return (
         <ul className={activityListStyle.activityListContainer}>
@@ -19,9 +19,12 @@ export default observer(function ActivityList() {
                         />
                     </div>
                     <div className={activityListStyle.activityListItemDetailsWrapper}>
-                        <h2 className={activityListStyle.activityListItemTitle}>
+                        <Link
+                            to={`/activities/${activity.id}`}
+                            className={activityListStyle.activityListItemTitle}
+                        >
                             {activity.title}
-                        </h2>
+                        </Link>
                         <p className={activityListStyle.activityListItemDate}>{activity.date}</p>
                         <div className={activityListStyle.activityListItemDesc}>
                             <p>{activity.description}</p>
@@ -40,15 +43,11 @@ export default observer(function ActivityList() {
                                 >
                                     Delete
                                 </button>
-                                <button
-                                    className={activityListStyle.activityListItemBtnView}
-                                    onClick={() => {
-                                        selectedActivity?.id !== activity.id && closeForm();
-                                        selectActivity(activity.id);
-                                    }}
-                                >
-                                    View
-                                </button>
+                                <Link to={`/activities/${activity.id}`}>
+                                    <button className={activityListStyle.activityListItemBtnView}>
+                                        View
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

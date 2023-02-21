@@ -1,6 +1,5 @@
 .activityDashboardContainer {
     width: 100%;
-    padding: 4vh 15%;
     display: grid;
     grid-template-columns: 10fr 6fr;
     column-gap: calc(20px + 1%);
